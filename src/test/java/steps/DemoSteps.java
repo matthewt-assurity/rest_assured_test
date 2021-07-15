@@ -26,7 +26,10 @@ public class DemoSteps {
 
     @Then("I can see that their name is {string}")
     public void iCanSeeThatTheirNameIsJaneJones(String arg0) {
-        String name = res.jsonPath().getJsonObject("firstName") + " " + res.jsonPath().getJsonObject("lastName");
+//        String name = res.jsonPath().getJsonObject("firstName") + " " + res.jsonPath().getJsonObject("lastName");
+        String fname = res.jsonPath().getJsonObject("firstName");
+        String lname = res.jsonPath().getJsonObject("lastName");
+        String name = fname + " " + lname;
         assertEquals(arg0, name);
         System.out.println(name);
     }
