@@ -16,7 +16,7 @@ public class DemoSteps {
     @When("I check the details of student {int}")
     public void iCheckTheDetailsOfStudent(int arg0) {
         RestAssured.baseURI = "https://it-foundations.app.ap.assurity.cloud/";
-//        RestAssured.defaultParser = Parser.JSON;
+        RestAssured.defaultParser = Parser.JSON;
         RestAssured.given().contentType("application/json\r\n");
         res = RestAssured.get("people/" + arg0);
         System.out.println(res.asPrettyString());
